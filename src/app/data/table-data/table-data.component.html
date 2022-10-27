@@ -1,0 +1,20 @@
+<h1>Student Data</h1>
+
+<div id="table-data">
+    <table>
+        <tr>
+            <th *ngFor="let heading of headings">{{heading}}</th>
+        </tr>
+        <tr *ngFor="let item of data let i=index">
+            <td><input type="text" readonly class="{{'rows'+i}}" value={{item.Name}} (dblclick)="click(i)" #name>
+            </td>
+            <td><input type="text" readonly class="{{'rows'+i}}" value={{item.Gender}} (dblclick)="click(i)" #gender>
+            </td>
+            <td><input type="text" readonly class="{{'rows'+i}}" value={{item.Marks}} (dblclick)="click(i)" #marks>
+            </td>
+            <td><input type="text" readonly class="{{'rows'+i}}" value={{item.Address}} (dblclick)="click(i)" #address>
+            </td>
+            <button id="{{i}}" hidden (click)="saveData(i, name.value, gender.value, marks.value, address.value)">Save</button>
+        </tr>
+    </table>
+</div>
