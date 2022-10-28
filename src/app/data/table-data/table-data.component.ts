@@ -52,27 +52,4 @@ export class TableDataComponent implements OnInit {
       'Address': 'Thrissur'
     }
   ]
-
-  click(id: any) {
-    var data: any = document.getElementsByClassName('rows' + id);
-    var show: any = document.getElementById(id);
-    for (let i of data) {
-      i.removeAttribute('readonly');
-    }
-    show.removeAttribute('hidden');
-  }
-
-  saveData(i: any, name: any, gender: any, marks: any, address: any) {
-    var data: any = document.getElementsByClassName('rows' + i);
-    var show: any = document.getElementById(i);
-    for (let i of data) {
-      i.readOnly = true;
-    }
-    show.hidden = true;
-
-    data[i].name = name;
-    data[i].gender = gender;
-    data[i].marks = marks;
-    data[i].address = address;
-  }
 }
